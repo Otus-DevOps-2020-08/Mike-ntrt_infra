@@ -6,6 +6,7 @@ Mike-ntrt Infra repository
 bastion_IP = 178.154.224.60  
 someinternalhost_IP = 10.130.0.11  
 
+#### ssh
 ssh connect oneline through Jumphost(option `-J`):  
 `ssh -i .ssh/appuser -A -J appuser@178.154.224.60 appuser@10.130.0.11`
 
@@ -40,3 +41,12 @@ appuser@someinternalhost:~$ ip -4 a show eth0
        valid_lft forever preferred_lft forever
 appuser@someinternalhost:~$
 ```
+#### pritunl
+
+sslip.io resolve `<ip>.sslip.io` into ip address  
+install Lets Encrypt tls certificate:  
+https://178.154.224.60 -> settings -> Lets Encrypt Domain -> 178.154.224.60.sslip.io
+
+we use Tunnelblick to connect to pritunel server
+connection to the Internalhost string:  
+`ssh -i ~/.ssh/appuser appuser@10.130.0.11`
