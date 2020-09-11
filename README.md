@@ -47,6 +47,6 @@ sslip.io resolve `<ip>.sslip.io` into ip address
 install Lets Encrypt tls certificate:  
 https://178.154.224.60 -> settings -> Lets Encrypt Domain -> 178.154.224.60.sslip.io
 
-we use Tunnelblick to connect to pritunel server
+we use Tunnelblick to connect to pritunel server  
 connection to the Internalhost string:  
 `ssh -i ~/.ssh/appuser appuser@10.130.0.11`
