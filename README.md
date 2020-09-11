@@ -3,10 +3,10 @@ Mike-ntrt Infra repository
 
 ### HW Lec 5 - Cloud Bastion
 
-bastion_IP = 178.154.224.60
-someinternalhost_IP = 10.130.0.11
+bastion_IP = 178.154.224.60  
+someinternalhost_IP = 10.130.0.11  
 
-ssh connect oneline through Jumphost(otion `-J`):
+ssh connect oneline through Jumphost(otion `-J`):  
 `ssh -i .ssh/appuser -A -J appuser@178.154.224.60 appuser@10.130.0.11`
 
 ssh connect via alias:
@@ -25,7 +25,7 @@ Host someinternalhost
 ```
 ProxyJump is a short alias for ProxyCommand in the new versions of OpenSSH
 
-connect string:
+connect string:  
 `ssh someinternalhost`
 
 let's check connection:
