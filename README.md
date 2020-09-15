@@ -1,6 +1,25 @@
 # Mike-ntrt_infra
 Mike-ntrt Infra repository
 
+### HW Lec 6 - Cloud Testapp  
+
+testapp_IP = 84.201.133.117  
+testapp_port = 9292  
+
+YC examle create lowcost VM  
+```
+yc compute instance create \  
+--name reddit-app \  
+--hostname reddit-app \  
+--platform="standard-v2" \  
+--core-fraction=5 \  
+--cores=2 \  
+--memory=1 \  
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=3GB \  
+--network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \  
+--preemptible \  
+```
+
 ### HW Lec 5 - Cloud Bastion
 
 bastion_IP = 178.154.224.60  
