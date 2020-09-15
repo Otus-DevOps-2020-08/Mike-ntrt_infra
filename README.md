@@ -4,7 +4,10 @@ Mike-ntrt Infra repository
 ### HW Lec 6 - Cloud Testapp  
 
 testapp_IP = 84.201.133.117  
-testapp_port = 9292  
+testapp_port = 9292
+
+don't use "sudo" in scripts
+use "sudo" while execute scripts
 
 YC examle create lowcost VM  
 ```
