@@ -1,0 +1,21 @@
+#cloud-config
+users:
+  - name: appuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC4WG+eKx5mjI6Gts5zZ8+Wyat/v0lDOwVcEvbCfcyCyv0uNrUUQMhVZGXbqVixPLD0UDXbdlD6Rh4qA2507kzKfFmN9VS3Q8Mwxjbxf/wO0NlFrDzt7zbudYF9LLjKaTzy7o3ilScQrxekzxWks7CHoW7NWeftYFekav3g1D7E4LBAwX0znJteGBuPCNHCW77q2u/VAIhIGzs+7EuhrNohZwVwZRUUUxg3meH7ZC3wE00hNXUYu3NYTJit8J6TMITHLJ7ay/wjOT14VUqRrIsaDnsm9p31PYGDjHTFnpTTzOb8nTEfoXB9MX/jcvp5VL60uc4zkEMcupOeM/7/hjVFjRcCSwGx/SZBY1p2fFv+u5ZAkZq0LiblZzhiGCDQ05Nvfd7dSVMxitf2FzheSeaV1P2zRCt2zIQxbd77wX6lRWw8n+lSQc0/56s6OA4IYZq5WZsiBmtaWO03MmEqZgTQax2rEEdGvWOW/vKOWQxjJ2MCqGldrYIhb3rKuMvFHb0= appuser
+
+runcmd:
+  - apt update && apt install -y ruby-full ruby-bundler build-essential git apt-transport-https libcurl3-gnutls ca-certificates
+  - wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
+  - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+  - apt-get update
+  - apt-get install -y mongodb-org
+  - systemctl start mongod
+  - systemctl enable mongod
+#install and run service
+  - git clone -b monolith https://github.com/express42/reddit.git
+  - cd reddit && bundle install
+  - puma -d
