@@ -4,12 +4,41 @@ Mike-ntrt Infra repository
 ### HW Lec 6 - Cloud Testapp  
 
 testapp_IP = 84.201.133.117  
-testapp_port = 9292
+testapp_port = 9292  
 
-don't use "sudo" in scripts
+#### install Testapp manualy by scripts
+
+don't use "sudo" in scripts  
 use "sudo" while execute scripts
 
-YC examle create lowcost VM  
+copy scripts to YC VM  
+```
+scp -i .ssh/appuser ./deploy.sh yc-user@84.201.133.117:/home/yc-user
+scp -i .ssh/appuser ./install_ruby.sh yc-user@84.201.133.117:/home/yc-user
+scp -i .ssh/appuser ./install_mongodb.sh yc-user@84.201.133.117:/home/yc-user
+```
+connect to YC VM via ssh and start scripts one-by-one
+
+#### autoinstall Testapp while create YC VM
+
+Use `yc compute instance create` command with metadata in YAML file:  
+```
+yc compute instance create \
+--name reddit-app-1 \
+--hostname reddit-app-1 \
+--platform="standard-v2" \
+--core-fraction=5 \
+--cores=2 \
+--memory=1 \
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=3GB \
+--network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+--preemptible \
+--metadata serial-port-enable=1 \
+--metadata-from-file user-data=./metadata.yaml
+```
+metadata.yaml contais Cloud Init modeles user and runcmd  
+
+YC example create lowcost VM  
 ```
 yc compute instance create \  
 --name reddit-app \  
