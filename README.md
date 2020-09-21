@@ -1,5 +1,18 @@
 # Mike-ntrt_infra
 Mike-ntrt Infra repository
+### HW Lec 7 - Packer Base
+
+create(bake) an OS image with app using HCL:  
+`packer/immutable.pkr.hcl` - template with source(builder) and provisioning blocks  
+`packer/sources.pkr.hcl` describes YC as a builder with params  
+`/packer/variables.pkr.hcl` describes params for YC builder  
+`/packer/files/puma.service` - systemd simple unit(type - service) to start app after after boot OS  
+`/packer/files/deploy.sh`  copy unit file into `/etc/systemd/system/`, enable and start service  
+
+how to start the build:  
+cd `./packer`  
+`packer validate ./`  
+`packer build ./`
 
 ### HW Lec 6 - Cloud Testapp  
 
