@@ -1,5 +1,5 @@
 {
-    "yc_service_account_key_file": "packer/examplekey.json",
+    "yc_service_account_key_file": "./examplekey.json",
     "yc_folder_id": "ksdlfjkjl_example_id",
     "yc_source_image_family": "ubuntu-1604-lts",
     "yc_subnet_id": "djksfhksdlfjkjl_example_subnet_id"
