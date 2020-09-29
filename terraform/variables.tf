@@ -29,3 +29,8 @@ variable zone_instance {
   description = "Instance Zone"
   default     = "ru-central1-a"
 }
+variable instance_count {
+  description = "Number of instances"
+  type        = number
+  default     = 1
+}
