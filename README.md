@@ -1,5 +1,18 @@
 # Mike-ntrt_infra
-Mike-ntrt Infra repository
+Mike-ntrt Infra repository  
+
+### HW Lec 9 - Terraform-2  
+
+#### stage & prod  
+
+`packer/app.json` & `packer/db.json` templates using for creation base images for DB and App VM  
+`terraform/modules/` contains 2 modules: DB and App, which used by Stage and Prod TF main files  
+`terraform/stage/` & `terraform/prod/` - an example of the infrastructure code reusability  
+it contains the same `main.tf` files and may be modified by vars  
+
+#### remote state
+
+
 ### HW Lec 8 - Terraform-1
 
 create 2 instances with provisioning by "file" and "remote-exec":  
