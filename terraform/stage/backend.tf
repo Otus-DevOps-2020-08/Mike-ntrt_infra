@@ -4,7 +4,7 @@ terraform {
     bucket     = "devoptus-tfstate"
     region     = "us-east-1"
     access_key = "T_s_XIvQuN6vfzIjKkGc"
-    secret_key = "1Ijl1qebhENWA4ByRhUzNzepMxB-zq8HHqukJmLT"
+    secret_key = "**"
 
     skip_region_validation      = true
     skip_credentials_validation = true
