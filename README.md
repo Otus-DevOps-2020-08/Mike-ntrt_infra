@@ -1,6 +1,19 @@
 # Mike-ntrt_infra
 Mike-ntrt Infra repository  
 
+### HW Lec 9 - Ansible-1  
+
+`ansible/inventory` - static inventory file in INI format  
+`ansible/inventory.yml` - static inventory file in YAML format  
+`ansible/clone.yml` - simple play with one task(ansible module Git)
+
+the command `ansible-inventory -i inventory.yml --list` may help to investigate inventory format    
+
+#### dynamic inventory  
+
+`ansible/dynamic-inventory.sh.json` - bash script that returns inventory in JSON format
+`ansible/ansible.cfg` contains path to dynamic inventory script
+
 ### HW Lec 9 - Terraform-2  
 
 #### stage & prod  
