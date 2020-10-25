@@ -29,7 +29,10 @@ cat<<EOF
     "app": {
         "hosts": [
             "${yc_instances_app[0]}"
-        ]
+        ],
+        "vars": {
+            "db_host": "${yc_instances_db[1]}"
+        } 
     },
     "db": {
         "hosts": [
