@@ -1,11 +1,17 @@
 # Mike-ntrt_infra
 Mike-ntrt Infra repository  
 
-### HW Lec 9 - Ansible-1  
+### HW Lec 11 - Ansible-2  
+
+`ansible/site.yml` - the ansible playbook that imports 3 other playbooks:  
+`ansible/db.yml`, `ansible/app.yml` and `ansible/deploy.yml`  
+`ansible/ansible.cfg` uses dynamic inventory script `ansible/dynamic-inventory.sh.json` that contains var "db_host"  
+
+### HW Lec 10 - Ansible-1  
 
 `ansible/inventory` - static inventory file in INI format  
 `ansible/inventory.yml` - static inventory file in YAML format  
-`ansible/clone.yml` - simple play with one task(ansible module Git)
+`ansible/clone.yml` - simple play with one task(ansible module Git)  
 
 the command `ansible-inventory -i inventory.yml --list` may help to investigate inventory format    
 

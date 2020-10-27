@@ -23,5 +23,5 @@ module "app" {
   app_disk_image  = var.app_disk_image
   subnet_id       = var.subnet_id
   #depends_on = [module.db]
-  database_url = local.database_ip
+  #database_url = local.database_ip
 }
