@@ -1,0 +1,11 @@
+---
+- name: Install Ruby && Bundler
+  hosts: all
+  become: true
+  tasks:
+  - name: Update packages
+    apt: update_cache=yes
+
+  - name: Install ruby and rubygems and required packages
+    apt: 
+      name: ['ruby-full', 'ruby-bundler', 'build-essential', 'git']
