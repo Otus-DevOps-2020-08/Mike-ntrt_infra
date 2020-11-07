@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Otus-DevOps-2020-08/Mike-ntrt_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2020-08/Mike-ntrt_infra)
+
 # Mike-ntrt_infra
 Mike-ntrt Infra repository  
 
