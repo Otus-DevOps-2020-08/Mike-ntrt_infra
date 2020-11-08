@@ -1,1 +1,4 @@
-ansible>=2.4
+ansible==2.9
+molecule<=2.22
+testinfra<4
+python-vagrant>=0.5.15
