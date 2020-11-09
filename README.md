@@ -1,5 +1,17 @@
+[![Build Status](https://travis-ci.com/Otus-DevOps-2020-08/Mike-ntrt_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2020-08/Mike-ntrt_infra)
+
 # Mike-ntrt_infra
 Mike-ntrt Infra repository  
+
+### HW Lec 12 - Ansible-3
+
+create 2 role templates by `ansible-galaxy init` - app & db  
+describes all roles tasks, handlers and default vars in roles struct    
+move old files to `ansible/old`  
+move playbooks to `ansible/playbooks`  
+change playbooks DB & App to use roles instead of tasks  
+use ansible-vault to encrypt file with vars for playbook `users`  
+"*" stage environment uses dynamic inventory(and as the default Inv in the ansible.cfg)    
 
 ### HW Lec 11 - Ansible-2  
 
